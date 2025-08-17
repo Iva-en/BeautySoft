@@ -1,0 +1,6 @@
+@BeautySoft.WebAPI_HostAddress = http://localhost:5119
+
+GET {{BeautySoft.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

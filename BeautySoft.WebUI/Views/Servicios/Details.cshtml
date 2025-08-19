@@ -1,0 +1,28 @@
+﻿@model BeautySoft.Domain.Entities.Servicio
+@{
+    ViewData["Title"] = "Detalles del servicio";
+}
+
+<h1 class="mb-3">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Nombre</dt>
+            <dd class="col-sm-9">@Model.Nombre</dd>
+
+            <dt class="col-sm-3">Duración (min)</dt>
+            <dd class="col-sm-9">@Model.DuracionMinutos</dd>
+
+            <dt class="col-sm-3">Precio</dt>
+            <dd class="col-sm-9">@Model.Precio.ToString("N2")</dd>
+
+            <dt class="col-sm-3">Activo</dt>
+            <dd class="col-sm-9">@(Model.Activo ? "Sí" : "No")</dd>
+        </dl>
+        <div class="d-flex gap-2">
+            <a asp-action="Edit" asp-route-id="@Model.ServicioId" class="btn btn-primary">Editar</a>
+            <a asp-action="Index" class="btn btn-outline-secondary">Volver</a>
+        </div>
+    </div>
+</div>

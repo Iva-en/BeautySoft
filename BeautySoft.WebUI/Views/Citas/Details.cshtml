@@ -1,0 +1,27 @@
+﻿@model BeautySoft.Domain.Entities.Cita
+@{
+    ViewData["Title"] = "Detalles de la cita";
+}
+<h1 class="mb-3">@ViewData["Title"]</h1>
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ClienteId</dt>
+            <dd class="col-sm-9">@Model.ClienteId</dd>
+            <dt class="col-sm-3">EstilistaId</dt>
+            <dd class="col-sm-9">@Model.EstilistaId</dd>
+            <dt class="col-sm-3">ServicioId</dt>
+            <dd class="col-sm-9">@Model.ServicioId</dd>
+            <dt class="col-sm-3">Fecha y hora</dt>
+            <dd class="col-sm-9">@Model.FechaHora</dd>
+            <dt class="col-sm-3">Estado</dt>
+            <dd class="col-sm-9">@Model.Estado</dd>
+            <dt class="col-sm-3">Precio final</dt>
+            <dd class="col-sm-9">@Model.PrecioFinal</dd>
+            <dt class="col-sm-3">Notas</dt>
+            <dd class="col-sm-9">@Model.Notas</dd>
+        </dl>
+        <a asp-action="Edit" asp-route-id="@Model.CitaId" class="btn btn-primary">Editar</a>
+        <a asp-action="Index" class="btn btn-outline-secondary">Volver</a>
+    </div>
+</div>

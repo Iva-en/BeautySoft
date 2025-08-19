@@ -1,0 +1,11 @@
+﻿@model BeautySoft.Domain.Entities.Cliente
+@{
+    ViewData["Title"] = "Eliminar cliente";
+}
+<h1 class="mb-3">@ViewData["Title"]</h1>
+<div class="alert alert-warning">¿Eliminar al cliente <strong>@Model.Nombre</strong>?</div>
+<form asp-action="Delete" method="post">
+    <input type="hidden" name="clienteId" value="@Model.ClienteId" />
+    <button class="btn btn-danger">Sí, eliminar</button>
+    <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
+</form>

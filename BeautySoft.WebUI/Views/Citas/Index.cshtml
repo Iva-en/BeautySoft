@@ -1,0 +1,29 @@
+﻿@model IEnumerable<BeautySoft.Domain.Entities.Cita>
+@{
+    ViewData["Title"] = "Citas";
+}
+<h1 class="mb-3">Citas</h1>
+<p><a class="btn btn-primary" asp-action="Create">Nueva cita</a></p>
+
+<table class="table table-striped">
+    <thead>
+        <tr><th>ClienteId</th><th>EstilistaId</th><th>ServicioId</th><th>Fecha y hora</th><th>Estado</th><th class="text-end">Acciones</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model ?? Enumerable.Empty<BeautySoft.Domain.Entities.Cita>())
+        {
+            <tr>
+                <td>@c.ClienteId</td>
+                <td>@c.EstilistaId</td>
+                <td>@c.ServicioId</td>
+                <td>@c.FechaHora</td>
+                <td>@c.Estado</td>
+                <td class="text-end">
+                    <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@c.CitaId">Detalles</a>
+                    <a class="btn btn-sm btn-secondary" asp-action="Edit" asp-route-id="@c.CitaId">Editar</a>
+                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@c.CitaId">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

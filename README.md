@@ -20,5 +20,3 @@ El sistema permitirá administrar:
 
 ---
 
-## 📂 Estructura del Proyecto
-
